@@ -1,7 +1,6 @@
 package com.kirk.pomelo.common.utils;
 
-import com.ruoyi.common.constant.PermissionConstants;
-import com.ruoyi.common.utils.MessageUtils;
+import com.kirk.pomelo.common.constant.PermissionConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;

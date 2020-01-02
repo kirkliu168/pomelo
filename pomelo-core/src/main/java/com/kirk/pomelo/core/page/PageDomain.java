@@ -1,6 +1,6 @@
 package com.kirk.pomelo.core.page;
 
-import com.ruoyi.common.utils.StringUtils;
+import com.kirk.pomelo.common.utils.StringUtils;
 
 /**
  * 分页数据

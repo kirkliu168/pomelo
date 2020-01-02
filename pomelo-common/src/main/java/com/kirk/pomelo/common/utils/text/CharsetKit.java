@@ -1,6 +1,6 @@
 package com.kirk.pomelo.common.utils.text;
 
-import com.ruoyi.common.utils.StringUtils;
+import com.kirk.pomelo.common.utils.StringUtils;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
