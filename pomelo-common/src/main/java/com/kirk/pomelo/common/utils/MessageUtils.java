@@ -1,5 +1,6 @@
 package com.kirk.pomelo.common.utils;
 
+import com.kirk.pomelo.common.utils.spring.SpringUtils;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 
