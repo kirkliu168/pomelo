@@ -4,7 +4,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 /**
- *  文件相关操作
+ * 文件相关操作
+ *
  * @author Administrator
  * @dete 14:29 2020/1/2
  **/
@@ -14,6 +15,7 @@ public class FileUtils {
 
     /**
      * 下载文件
+     *
      * @param response
      * @param file
      * @param newFileName
