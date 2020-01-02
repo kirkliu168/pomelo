@@ -1,5 +1,6 @@
 package com.kirk.pomelo.admin.web.config;
 
+import com.kirk.pomelo.common.config.Global;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
