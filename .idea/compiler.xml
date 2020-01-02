@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pomelo-admin" />
-        <module name="pomelo-core" />
         <module name="pomelo-backup" />
-        <module name="pomelo-config" />
+        <module name="pomelo-core" />
         <module name="pomelo-portal" />
+        <module name="pomelo-config" />
         <module name="pomelo-admin-web" />
         <module name="pomelo-search" />
         <module name="pomelo-common" />
