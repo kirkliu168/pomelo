@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pomelo-parent</artifactId>
+        <groupId>com.kirk.pomelo</groupId>
+        <version>1.0.0</version>
+        <relativePath>../pomelo-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pomelo-dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>pomelo-dependencies</name>
+    <description>pomelo-dependencies</description>
+
+    <properties>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <pomelo-admin.version>1.0.0</pomelo-admin.version>
+        <pomelo-core.version>1.0.0</pomelo-core.version>
+        <pomelo-common.version>1.0.0</pomelo-common.version>
+        <pomelo-dependencies.version>1.0.0</pomelo-dependencies.version>
+        <pomelo-backup.version>1.0.0</pomelo-backup.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-ui.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kirk.pomelo</groupId>
+            <artifactId>pomelo-core</artifactId>
+            <version>${pomelo-core.version}</version>
+        </dependency>
+    </dependencies>
+</project>
