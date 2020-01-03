@@ -29,7 +29,7 @@ function login() {
         var validateCode = $("input[name='validateCode']").val();
         $.ajax({
             type: "post",
-            url: "login",
+            url: "http://localhost:18001/login",
             data: {
                 "username": username,
                 "password": password,

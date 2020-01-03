@@ -1,6 +1,6 @@
 # SpringCloud项目常见问题及处理方法
 
-#### `SpringBoot启动报错：Failed to auto-configure a DataSource: 'spring.datasource.url' is not specified and`
+####  SpringBoot启动报错：`Failed to auto-configure a DataSource: 'spring.datasource.url' is not specified and`
 
 启动报了如下的错误：
 ```
@@ -28,14 +28,14 @@
 
  综合来看确定是在项目中使用了数据库相关的组件，但是没有配置数据源信息。
  看了一下项目 `pom文件` 的依赖，不知道自己什么时候引入了`spring-boot-starter-jdbc` 这个依赖包：
- 
+
  ```xml
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jdbc</artifactId>
     </dependency>
-```
- 
+ ```
+
 解决问题方法，如果你需要用到数据库组件，那么就需要配置一下数据源相关的信息；
 如果暂时不需要数据库组件，那么可以在项目启动类上，
 这样写`@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})` 就可以了；
