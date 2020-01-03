@@ -1,7 +1,6 @@
 package com.kirk.pomelo.admin.web.controller;
 
 import com.kirk.pomelo.common.utils.ServletUtils;
-import com.kirk.pomelo.core.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author kirk
  */
 @Controller
-public class LoginController extends BaseController {
+public class LoginController {
 
     @GetMapping("/login")
     public String login(HttpServletRequest request, HttpServletResponse response) {
