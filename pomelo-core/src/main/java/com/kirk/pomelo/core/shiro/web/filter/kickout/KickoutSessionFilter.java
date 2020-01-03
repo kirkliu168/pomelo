@@ -1,11 +1,11 @@
 package com.kirk.pomelo.core.shiro.web.filter.kickout;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ruoyi.common.constant.ShiroConstants;
-import com.ruoyi.common.core.domain.AjaxResult;
-import com.ruoyi.common.utils.ServletUtils;
-import com.ruoyi.framework.util.ShiroUtils;
-import com.ruoyi.system.domain.SysUser;
+import com.kirk.pomelo.common.constant.ShiroConstants;
+import com.kirk.pomelo.common.model.AjaxResult;
+import com.kirk.pomelo.common.utils.ServletUtils;
+import com.kirk.pomelo.core.utils.ShiroUtils;
+import com.kirk.pomelo.system.domain.SysUser;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.session.Session;
