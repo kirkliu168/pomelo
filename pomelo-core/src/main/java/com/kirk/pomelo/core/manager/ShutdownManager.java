@@ -1,6 +1,6 @@
 package com.kirk.pomelo.core.manager;
 
-import com.ruoyi.framework.shiro.web.session.SpringSessionValidationScheduler;
+import com.kirk.pomelo.core.shiro.web.session.SpringSessionValidationScheduler;
 import net.sf.ehcache.CacheManager;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.slf4j.Logger;

@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pomelo-admin" />
         <module name="pomelo-system" />
-        <module name="pomelo-backup" />
         <module name="pomelo-core" />
-        <module name="pomelo-portal" />
+        <module name="pomelo-backup" />
         <module name="pomelo-config" />
+        <module name="pomelo-portal" />
+        <module name="pomelo-admin" />
         <module name="pomelo-admin-web" />
         <module name="pomelo-search" />
         <module name="pomelo-common" />
@@ -19,8 +19,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="pomelo" target="1.8" />
-      <module name="pomelo-admin" target="1.8" />
-      <module name="pomelo-admin-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

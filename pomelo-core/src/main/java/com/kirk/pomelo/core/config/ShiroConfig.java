@@ -41,7 +41,7 @@ import java.util.Map;
  *
  * @author ruoyi
  */
-@Configuration
+
 public class ShiroConfig {
     public static final String PREMISSION_STRING = "perms[\"{0}\"]";
 
@@ -98,7 +98,7 @@ public class ShiroConfig {
      */
     @Bean
     public EhCacheManager getEhCacheManager() {
-        net.sf.ehcache.CacheManager cacheManager = net.sf.ehcache.CacheManager.getCacheManager("ruoyi");
+        net.sf.ehcache.CacheManager cacheManager = net.sf.ehcache.CacheManager.getCacheManager("pomelo-ehcache");
         EhCacheManager em = new EhCacheManager();
         if (StringUtils.isNull(cacheManager)) {
             em.setCacheManager(new net.sf.ehcache.CacheManager(getCacheManagerConfigFileInputStream()));
