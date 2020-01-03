@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/pomelo-search/pom.xml" />
         <option value="$PROJECT_DIR$/pomelo-portal/pom.xml" />
         <option value="$PROJECT_DIR$/pomelo-config/pom.xml" />
+        <option value="$PROJECT_DIR$/pomelo-system/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

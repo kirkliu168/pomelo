@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pomelo-admin" />
+        <module name="pomelo-system" />
         <module name="pomelo-backup" />
         <module name="pomelo-core" />
         <module name="pomelo-portal" />
@@ -34,6 +35,7 @@
       <module name="pomelo-dependencies" options="-parameters" />
       <module name="pomelo-portal" options="-parameters" />
       <module name="pomelo-search" options="-parameters" />
+      <module name="pomelo-system" options="-parameters" />
     </option>
   </component>
 </project>

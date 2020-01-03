@@ -5,6 +5,8 @@ import com.kirk.pomelo.common.constant.ShiroConstants;
 import com.kirk.pomelo.common.exception.user.UserPasswordNotMatchException;
 import com.kirk.pomelo.common.exception.user.UserPasswordRetryLimitExceedException;
 import com.kirk.pomelo.common.utils.MessageUtils;
+import com.kirk.pomelo.core.manager.AsyncManager;
+import com.kirk.pomelo.core.manager.factory.AsyncFactory;
 import com.ruoyi.framework.manager.AsyncManager;
 import com.ruoyi.framework.manager.factory.AsyncFactory;
 import com.ruoyi.system.domain.SysUser;

@@ -17,6 +17,10 @@ cd pomelo-common
 call mvn clean install
 cd ..
 
+cd pomelo-system
+call mvn clean install
+cd ..
+
 cd pomelo-core
 call mvn clean install
 cd ..

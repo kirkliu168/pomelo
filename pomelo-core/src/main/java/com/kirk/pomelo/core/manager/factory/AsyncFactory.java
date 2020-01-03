@@ -6,6 +6,8 @@ import com.kirk.pomelo.common.utils.ServletUtils;
 import com.kirk.pomelo.common.utils.spring.SpringUtils;
 import com.kirk.pomelo.core.shiro.session.OnlineSession;
 import com.kirk.pomelo.core.utils.ShiroUtils;
+import com.kirk.pomelo.system.domain.SysUserOnline;
+import com.kirk.pomelo.system.services.ISysUserOnlineService;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
