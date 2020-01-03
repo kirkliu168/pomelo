@@ -16,38 +16,40 @@ $.validator.setDefaults({
 
 function login() {
     addClass(document.querySelector(".login"), "active");
-    setTimeout(function () {
-        addClass(document.querySelector(".sk-rotating-plane"), "active")
-        document.querySelector(".login").style.display = "none"
-    }, 800);
-    setTimeout(function () {
-        removeClass(document.querySelector(".login"), "active")
-        removeClass(document.querySelector(".sk-rotating-plane"), "active")
-        document.querySelector(".login").style.display = "block"
-        var username = $.common.trim($("input[name='username']").val());
-        var password = $.common.trim($("input[name='userpwd']").val());
-        var validateCode = $("input[name='validateCode']").val();
-        $.ajax({
-            type: "post",
-            url: "http://localhost:18001/login",
-            data: {
-                "username": username,
-                "password": password,
-                "validateCode": validateCode
-            },
-            success: function (r) {
-                if (r.code == 0) {
-                    location.href = ctx + 'index';
-                } else {
-                    $.modal.closeLoading();
-                    $('.imgcode').click();
-                    $(".code").val("");
-                    $.modal.msg(r.msg);
-                }
+    addClass(document.querySelector(".sk-rotating-plane"), "active");
+    document.querySelector(".login").style.display = "none";
+    var username = $.common.trim($("input[name='username']").val());
+    var password = $.common.trim($("input[name='userpwd']").val());
+    var validateCode = $("input[name='validateCode']").val();
+    $.ajax({
+        type: "post",
+        url: "http://localhost:18001/login",
+        data: {
+            "username": username,
+            "password": password,
+            "validateCode": validateCode,
+            "rememberMe": true
+        },
+        success: function (r) {
+            if (r.code == 0) {
+                location.href = 'index';
+            } else {
+                removeClass(document.querySelector(".login"), "active");
+                removeClass(document.querySelector(".sk-rotating-plane"), "active");
+                document.querySelector(".login").style.display = "block";
+                $('.imgcode').click();
+                $(".code").val("");
+                $.modal.msg(r.msg);
             }
-        });
-    }, 5000);
-
+        },
+        error: function () {
+            setTimeout(function () {
+                removeClass(document.querySelector(".login"), "active");
+                removeClass(document.querySelector(".sk-rotating-plane"), "active");
+                document.querySelector(".login").style.display = "block";
+            }, 5000);
+        }
+    });
 }
 
 function validateRule() {
@@ -123,18 +125,3 @@ function removeClass(ele, cls) {
         ele.className = newClass.replace(/^\s+|\s+$/g, '');
     }
 }
-
-// document.querySelector("#login-button").onclick = function () {
-//     addClass(document.querySelector(".login"), "active")
-//     setTimeout(function () {
-//         addClass(document.querySelector(".sk-rotating-plane"), "active")
-//         document.querySelector(".login").style.display = "none"
-//     }, 800)
-//     setTimeout(function () {
-//         removeClass(document.querySelector(".login"), "active")
-//         removeClass(document.querySelector(".sk-rotating-plane"), "active")
-//         document.querySelector(".login").style.display = "block"
-//         alert("登录成功")
-//
-//     }, 5000)
-// }

@@ -37,9 +37,11 @@ public class LoginController extends BaseController {
 
     @GetMapping("captcha.jpg")
     public void captcha(HttpServletResponse response, HttpServletRequest request) throws IOException {
-        response.setHeader("Cache-Control", "no-store, no-cache");
+        response.setDateHeader("Expires", 0);
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+        response.setHeader("Pragma", "no-cache");
         response.setContentType("image/jpeg");
-
         // 生成文字验证码
         String text = producer.createText();
         // 生成图片验证码
