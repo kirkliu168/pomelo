@@ -41,7 +41,7 @@ import java.util.Map;
  *
  * @author ruoyi
  */
-
+@Configuration
 public class ShiroConfig {
     public static final String PREMISSION_STRING = "perms[\"{0}\"]";
 
