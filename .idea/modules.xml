@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/pomelo.iml" filepath="$PROJECT_DIR$/.idea/pomelo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pomelo-admin/pomelo-admin.iml" filepath="$PROJECT_DIR$/pomelo-admin/pomelo-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pomelo-admin-web/pomelo-admin-web.iml" filepath="$PROJECT_DIR$/pomelo-admin-web/pomelo-admin-web.iml" />
     </modules>
   </component>
 </project>

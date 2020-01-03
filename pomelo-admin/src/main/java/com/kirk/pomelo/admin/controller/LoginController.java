@@ -2,9 +2,18 @@ package com.kirk.pomelo.admin.controller;
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
+import com.kirk.pomelo.common.model.AjaxResult;
 import com.kirk.pomelo.common.utils.IOUtils;
+import com.kirk.pomelo.common.utils.StringUtils;
+import com.kirk.pomelo.core.controller.BaseController;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
@@ -21,7 +30,7 @@ import java.io.IOException;
  **/
 
 @RestController
-public class LoginController {
+public class LoginController extends BaseController {
 
     @Autowired
     private Producer producer;
@@ -41,5 +50,22 @@ public class LoginController {
         ServletOutputStream out = response.getOutputStream();
         ImageIO.write(image, "jpg", out);
         IOUtils.closeQuietly(out);
+    }
+
+    @PostMapping("/login")
+    @ResponseBody
+    public AjaxResult ajaxLogin(String username, String password, Boolean rememberMe) {
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password, rememberMe);
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.login(token);
+            return success();
+        } catch (AuthenticationException e) {
+            String msg = "用户或密码错误";
+            if (StringUtils.isNotEmpty(e.getMessage())) {
+                msg = e.getMessage();
+            }
+            return error(msg);
+        }
     }
 }

@@ -5,57 +5,84 @@
     <title>登录柒拾忆系统</title>
     <meta name="description" content="柒拾忆后台管理平台">
     <meta name="description" content="柒拾忆后台管理平台登陆页面.">
-    <meta name="author" content="kirk.liu" />
+    <meta name="author" content="kirk.liu"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <link rel="stylesheet" media="screen" href="../static/css/login/style.css" th:href="@{/css/login/style.css}">
     <link rel="stylesheet" type="text/css" href="../static/css/login/reset.css" th:href="@{/css/login/reset.css}"/>
     <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html" />
+    <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
     <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{favicon.ico}"/>
-    <style type="text/css">label.error { position:inherit;  }</style>
+    <style type="text/css">label.error {
+        position: inherit;
+        color: red;
+    }</style>
     <script>
-        if(window.top!==window.self){window.top.location=window.location};
+        if (window.top !== window.self) {
+            window.top.location = window.location
+        }
+        ;
     </script>
 </head>
 
 <body>
-    <div id="particles-js">
+<div id="particles-js">
+    <form id="signupForm">
         <div class="login">
             <div class="login-top">登录</div>
             <div class="login-center clearfix">
                 <div class="login-center-img"><img src="img/name.png"/></div>
                 <div class="login-center-input">
-                    <input type="text" name="" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
+                    <input type="text" id="username" name="username" class="form-control uname" placeholder="请输入您的用户名"
+                           onfocus="this.placeholder=''"
+                           onblur="this.placeholder='请输入您的用户名'"/>
                     <div class="login-center-input-text">用户名</div>
                 </div>
             </div>
             <div class="login-center clearfix">
                 <div class="login-center-img"><img src="img/password.png"/></div>
                 <div class="login-center-input">
-                    <input type="password" name=""value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+                    <input type="password" name="userpwd" id="userpwd" class="form-control pword" placeholder="请输入您的密码"
+                           onfocus="this.placeholder=''"
+                           onblur="this.placeholder='请输入您的密码'"/>
                     <div class="login-center-input-text">密码</div>
                 </div>
             </div>
             <div class="login-center clearfix">
                 <div class="login-center-img"><img src="img/yanzhengma.png"/></div>
-                <div class="login-center-input" style="width: 40%;">
-                    <input type="text" name="" value="" placeholder="请输入验证码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入验证码'"/>
+                <div class="login-center-input">
+                    <input type="text" name="validateCode" id="validateCode" class="form-control code" style="width: 43%;"
+                           placeholder="请输入验证码"
+                           onfocus="this.placeholder=''" onblur="this.placeholder='请输入验证码'"/>
                     <div class="login-center-input-text">验证码</div>
                     <a href="javascript:void(0);" title="点击更换验证码">
-                        <img class="imgcode" width="85%"/>
+                        <img class="imgcode" th:src="@{http://localhost:18001/captcha.jpg}"
+                             style="width: 50%;line-height: 40px; height: 40px; margin-left: 10px;"/>
                     </a>
                 </div>
             </div>
-            <div class="login-button">登陆</div>
+            <div class="login-center clearfix">
+                <button type="submit" class="login-button">登陆</button>
+            </div>
         </div>
         <div class="sk-rotating-plane"></div>
-    </div>
+    </form>
+</div>
 
-    <script src="../static/js/commons/particles.min.js" th:src="@{/js/commons/particles.min.js}"></script>
-    <script src="../static/js/commons/app.js" th:src="@{/js/commons/app.js}"></script>
-    <script src="../static/js/commons/login.js" th:src="@{/js/commons/login.js}"></script>
-    <!-- 全局js -->
-    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<!-- 全局js -->
+<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<!-- 验证插件 -->
+<script src="../static/ajax/libs/validate/jquery.validate.min.js"
+        th:src="@{/ajax/libs/validate/jquery.validate.min.js}"></script>
+<script src="../static/ajax/libs/validate/messages_zh.min.js"
+        th:src="@{/ajax/libs/validate/messages_zh.min.js}"></script>
+<script src="../static/ajax/libs/layer/layer.min.js" th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+<!-- 自定义js -->
+<script src="../static/js/commons/particles.min.js" th:src="@{/js/commons/particles.min.js}"></script>
+<script src="../static/js/commons/app.js" th:src="@{/js/commons/app.js}"></script>
+<script src="../static/js/commons/pomelo-ui.js" th:src="@{/js/commons/pomelo-ui.js?v=4.1.0}"></script>
+<script src="../static/js/commons/login.js" th:src="@{/js/commons/login.js}"></script>
+
 </body>
 </html>
