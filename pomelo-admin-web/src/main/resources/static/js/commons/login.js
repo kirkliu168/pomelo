@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
     validateKickout();
     validateRule();
-    $('.imgcode').click(function() {
+    $('.imgcode').click(function () {
         //验证码看不清
         var url = "http://localhost:18001/captcha.jpg?s=" + Math.random();
         $(".imgcode").attr("src", url);
@@ -9,7 +9,7 @@ $(function() {
 });
 
 $.validator.setDefaults({
-    submitHandler: function() {
+    submitHandler: function () {
         login();
     }
 });
@@ -33,9 +33,9 @@ function login() {
             data: {
                 "username": username,
                 "password": password,
-                "validateCode" : validateCode
+                "validateCode": validateCode
             },
-            success: function(r) {
+            success: function (r) {
                 if (r.code == 0) {
                     location.href = ctx + 'index';
                 } else {
@@ -78,17 +78,17 @@ function validateKickout() {
                 icon: 0,
                 title: "系统提示"
             },
-            function(index) {
+            function (index) {
                 //关闭弹窗
                 layer.close(index);
                 if (top != self) {
                     top.location = self.location;
                 } else {
-                    var url  =  location.search;
+                    var url = location.search;
                     if (url) {
-                        var oldUrl  = window.location.href;
-                        var newUrl  = oldUrl.substring(0,  oldUrl.indexOf('?'));
-                        self.location  = newUrl;
+                        var oldUrl = window.location.href;
+                        var newUrl = oldUrl.substring(0, oldUrl.indexOf('?'));
+                        self.location = newUrl;
                     }
                 }
             });

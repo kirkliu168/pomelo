@@ -1,13 +1,19 @@
 package com.kirk.pomelo.core.manager.factory;
 
 
+import com.kirk.pomelo.common.constant.Constants;
 import com.kirk.pomelo.common.utils.AddressUtils;
 import com.kirk.pomelo.common.utils.ServletUtils;
 import com.kirk.pomelo.common.utils.spring.SpringUtils;
 import com.kirk.pomelo.core.shiro.session.OnlineSession;
+import com.kirk.pomelo.core.utils.LogUtils;
 import com.kirk.pomelo.core.utils.ShiroUtils;
+import com.kirk.pomelo.system.domain.SysLogininfor;
+import com.kirk.pomelo.system.domain.SysOperLog;
 import com.kirk.pomelo.system.domain.SysUserOnline;
+import com.kirk.pomelo.system.services.ISysOperLogService;
 import com.kirk.pomelo.system.services.ISysUserOnlineService;
+import com.kirk.pomelo.system.services.impl.SysLogininforServiceImpl;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
